@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import routes from './routes';
 
+import { errors } from 'celebrate';
+
 class App {
   constructor() {
     this.server = express();
@@ -11,12 +13,13 @@ class App {
   }
 
   middlewares() {
-    this.server.use(express.json());
     this.server.use(cors());
+    this.server.use(express.json());
   }
 
   routes() {
     this.server.use(routes);
+    this.server.use(errors());
   }
 }
 
