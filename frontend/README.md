@@ -3,6 +3,10 @@
 	API
 </h1>
 
+![App Screenshot](https://github.com/henriquecampaner/beahero/blob/master/frontend/home.JPG)
+![App Screenshot](https://github.com/henriquecampaner/beahero/blob/master/frontend/profile.JPG)
+![App Screenshot](https://github.com/henriquecampaner/beahero/blob/master/frontend/new%20case.JPG)
+
 ## :rocket: Technology
 
 This project was developed with the following technologies:
