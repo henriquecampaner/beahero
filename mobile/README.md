@@ -4,21 +4,18 @@
 </h1>
 
 <p align="center">
-  <img alt="Demo" src="https://github.com/henriquecampaner/beahero/blob/master/frontend/gif.gif">
+  <img alt="Demo" src="https://im2.ezgif.com/tmp/ezgif-2-0fb4a2dd498c.gif">
 </p>
-
-![App Screenshot](https://github.com/henriquecampaner/beahero/blob/master/frontend/home.JPG)
-![App Screenshot](https://github.com/henriquecampaner/beahero/blob/master/frontend/profile.JPG)
-![App Screenshot](https://github.com/henriquecampaner/beahero/blob/master/frontend/new%20case.JPG)
 
 ## :rocket: Technology
 
 This project was developed with the following technologies:
 
 - [React JS](https://reactjs.org/)
+- [Expo](https://expo.io/)
 - [styled-components](https://www.styled-components.com/)
 - [Axios](https://github.com/axios/axios)
-- [React Router Dom](https://github.com/ReactTraining/react-router)
+- [React Navigation](https://reactnavigation.org/)
 - [VS Code](https://code.visualstudio.com/) with [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## :information_source: How To Use
