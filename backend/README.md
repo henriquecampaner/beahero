@@ -59,4 +59,5 @@ Routes to manage incidents
 Method | URI | Parameters | Body | Description | Return |
 -------|-----|:----------:|:----:|-----------|:-------:|
 POST | /incidents | `AUTHORIZATION` | <code><span style="color:red">title</span></code>, <code><span style="color:red">description</span></code>, <code><span style="color:red">value | Create a new incident | `{ id, title, description, value }` |
+GET | /profile | `AUTHORIZATION`  | ❌ | List incidents | `{ incidents }` |
 DELETE | /incidents/:id | `AUTHORIZATION` and `id`: id referring to the ONG in the database | ❌ | Delete a Incident | `{ }` |
