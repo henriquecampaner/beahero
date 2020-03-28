@@ -3,6 +3,10 @@
 	API
 </h1>
 
+<p align="center">
+  <img alt="Demo" src="https://github.com/henriquecampaner/beahero/blob/master/frontend/gif.gif">
+</p>
+
 ![App Screenshot](https://github.com/henriquecampaner/beahero/blob/master/frontend/home.JPG)
 ![App Screenshot](https://github.com/henriquecampaner/beahero/blob/master/frontend/profile.JPG)
 ![App Screenshot](https://github.com/henriquecampaner/beahero/blob/master/frontend/new%20case.JPG)
