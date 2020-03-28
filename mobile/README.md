@@ -1,6 +1,6 @@
 <h1 align="center">
   <img alt="Be The Hero" title="Be The Hero" src="https://github.com/henriquecampaner/beahero/blob/master/frontend/src/assets/logo.svg" width="300px" /> <br />
-	API
+	MOBILE
 </h1>
 
 <p align="center">
