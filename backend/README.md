@@ -32,27 +32,22 @@ Method | URI | Parameters | Body | Description | Return |
 -------|-----|:----------:|:----:|-----------|:-------:|
 POST | /sessions | ❌ | <code><span style="color:red">id</span></code> | Login. | `Id` |
 
-### Files
 
-Route for sending image file.
+POST | /ongs | ❌ | <code><span style="color:red">name</span></code>, <code><span style="color:red">email</span></code>, <code><span style="color:red">value</code></span> | Create a new incident | `{ id, title, description, value }` |
 
-Method | URI | Parameters | Body | Description | Return |
--------|-----|:----------:|:----:|-----------|:-------:|
-POST | /files | Via Multipart Form: `file` | ❌ | Route to send an image | `{ id, url, name, path, createdAt, updatedAt }` |
 
-### Admin routes: Requires JWT Token
+### ONG routes: Requires Headers Authorization
 
->For all of the following routes, ** the jwt token ** must be sent. In the format <code style="color:red">Bearer TOKEN</code>
+>For all of the following routes, ** Headers Authorization ** must be sent.
 
-### Recipients
+### Incidents
 
-Routes for managing the ** recipients **
+Routes to manage incidents
 
 Method | URI | Parameters | Body | Description | Return |
 -------|-----|:----------:|:----:|-----------|:-------:|
-POST | /recipients | `token JWT` | <code><span style="color:red">name</span></code>, <code><span style="color:red">street</span></code>, <code><span style="color:red">number</span></code>, <code><span style="color:red">city</span></code>, <code><span style="color:red">country</span></code> e <code><span style="color:red">postcode</span></code> | Create a recipient | `{ id, name, street, number, country, city, postcode }` |
-PUT | /recipients/:id | `token JWT` e `id`: id referring to the recipient in the database | <code><span style="color:red">name</span></code>, <code><span style="color:red">street</span></code>, <code><span style="color:red">number</span></code>, <code><span style="color:red">country</span></code>, <code><span style="color:red">city</span></code> e <code><span style="color:red">postcode</span></code> | Updates a recipient | `{ id, name, street, number, country, city, postcode }` |
-DELETE | /recipients/:id | `token JWT` e `id`: id referring to the recipient in the database | ❌ | Delete a recipient | `{ id, name, street, number, country, city, postcode }` |
+POST | /incidents | `AUTHORIZATION` | <code><span style="color:red">title</span></code>, <code><span style="color:red">description</span></code>, <code><span style="color:red">value | Create a new incident | `{ id, title, description, value }` |
+DELETE | /incidents/:id | `AUTHORIZATION` and `id`: id referring to the ONG in the database | ❌ | Delete a Incident | `{ }` |
 
 
 ### Deliveryman
