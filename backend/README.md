@@ -33,7 +33,19 @@ Method | URI | Parameters | Body | Description | Return |
 POST | /sessions | ❌ | <code><span style="color:red">id</span></code> | Login. | `Id` |
 
 
-POST | /ongs | ❌ | <code><span style="color:red">name</span></code>, <code><span style="color:red">email</span></code>, <code><span style="color:red">value</code></span> | Create a new incident | `{ id, title, description, value }` |
+### ONGS
+Method | URI | Parameters | Body | Description | Return |
+-------|-----|:----------:|:----:|-----------|:-------:|
+POST | /ongs | ❌ | <code><span style="color:red">name</span></code>, <code><span style="color:red">email</span></code>, <code><span style="color:red">whatsapp</code></span>, <code><span style="color:red">city</span></code>, <code><span style="color:red">country</span></code> | Create new ONG | `{ id }` |
+GET | /ongs | ❌ | ❌ | List ONG | `{ ongs }` |
+
+### Incidents
+
+Routes to manage incidents
+
+Method | URI | Parameters | Body | Description | Return |
+-------|-----|:----------:|:----:|-----------|:-------:|
+GET | /ongs | page | ❌ | ❌| `{ incidents }` |
 
 
 ### ONG routes: Requires Headers Authorization
@@ -48,82 +60,3 @@ Method | URI | Parameters | Body | Description | Return |
 -------|-----|:----------:|:----:|-----------|:-------:|
 POST | /incidents | `AUTHORIZATION` | <code><span style="color:red">title</span></code>, <code><span style="color:red">description</span></code>, <code><span style="color:red">value | Create a new incident | `{ id, title, description, value }` |
 DELETE | /incidents/:id | `AUTHORIZATION` and `id`: id referring to the ONG in the database | ❌ | Delete a Incident | `{ }` |
-
-
-### Deliveryman
-
-** Delivery Managers ** Routes
-
-Method | URI | Parameters | Body | Description | Return |
--------|-----|:----------:|:----:|-----------|:-------:|
-POST | /deliveryman | `token JWT` | <code><span style="color:red">name</span></code> e <code><span style="color:red">email</span></code> | Create Delivery Man | `{ id, name, email }` |
-PUT | /deliveryman/:id | `token JWT` e `id`: id referring to the recipient in the database | <code><span style="color:red">name</span></code> e <code><span style="color:red">email</span></code> | Edit Delivery Man | `{ id, name, email }` |
-DELETE | /deliverymen/:id | `token JWT` e `id`: id referring to the recipient in the database | ❌ | Delete a deliveryman | `{ id, name, email }` |
-
-### Delivery
-
-Routes for ** order management **
-
-Method | URI | Parameters | Body | Description | Return |
--------|-----|:----------:|:----:|-----------|:-------:|
-POST | /orders | `token JWT` | <code><span style="color:red">product</span></code>, <code><span style="color:red">recipient_id</span></code>, <code><span style="color:red">deliveryman_id</span></code> | Create Order | `{ id, product, deliveryman, recipient }` |
-PUT | /orders/:id | `token JWT` e `id`: id referring to the recipient in the database |  <code><span style="color:red">product</span></code>, <code><span style="color:red">recipient_id</span></code>, <code><span style="color:red">deliveryman_id</span></code> | Edit Order | `{ id, product, deliveryman, recipient }` |
-DELETE | /orders/:orderId/problems | `token JWT` e `orderId`: id referring to the recipient in the database | ❌ | Delete an order | `{ id, product, deliveryman, recipient }` |
-
-
-### Deliveryman routes - JWT Token not required
-
-### Delivery 
-
-Routes for ** View Delivery **
-
-Method | URI | Parameters | Body | Description | Return |
--------|-----|:----------:|:----:|-----------|:-------:|
-GET | /orders | ❌ | ❌ | List deliveries  | `{ order, recipient and deliveryman}` |
-GET | /orders/:id | `id:` id referring to the order in the database | ❌ | List deliveries  | `{ order, recipient and deliveryman}` |
-
-### Delivery Problems
-
-Routes for ** order management **
-
-Method | URI | Parameters | Body | Description | Return |
--------|-----|:----------:|:----:|-----------|:-------:|
-GET | /orders/problems/list | ❌ | ❌ | List deliveries with problem | `{ id, description, order_id }` |
-POST | /orders/problems |  ❌ | <code><span style="color:red">description</span></code>, <code><span style="color:red">order_id</span></code> | Create Delivery Problem | `{ id, description, order_id }` |
-GET | /orders/:orderId/problems | `orderId:` orderId referring to the recipient in the database | ❌ | List delivery with problem | `{ id, description, order_id }` |
-
-### Deliveries Delivered
-
-Routes for ** Deliveries Delivered **
-
-Method | URI | Parameters | Body | Description | Return |
--------|-----|:----------:|:----:|-----------|:-------:|
-GET | /deliveryman/:id/deliveredorders | `id:` id referring to the recipient in the database | ❌ | List deliveries Delivered | `{ order, recipient and deliveryman}` |
-PUT | /deliveryman/:id/deliveredorders |  `id:` id referring to the recipient in the database | <code><span style="color:red">orderId</span></code>, <code><span style="color:red">signature_id</span></code> | Ends delivery | `{ id, order  }` |
-
-### Deliveries 
-
-Routes for ** Deliveries management **
-
-Method | URI | Parameters | Body | Description | Return |
--------|-----|:----------:|:----:|-----------|:-------:|
-GET | /deliveryman/:id/deliveries | `id:` id referring to the deliveryman in the database | ❌ | List deliveries  | `{ order, recipient and deliveryman}` |
-PUT | /deliveryman/:id/deliveries |  `id:` id referring to the deliveryman in the database | <code><span style="color:red">order_id </span></code>, <code><span style="color:red">start_date</span></code> | Collect Delivery | `{ id, order  }` |
-
-### Deliveryman
-
-Routes for ** View Deliveryman **
-
-Method | URI | Parameters | Body | Description | Return |
--------|-----|:----------:|:----:|-----------|:-------:|
-GET | /deliveryman/ | ❌ | ❌ | List deliverymen  | `{ [deliveryman] }` |
-GET | /deliveryman/:id | `id:` id referring to the deliveryman in the database | ❌ | List deliveries  | `{ deliveryman }` |
-
-### Recipients
-
-Routes for ** View Recipients **
-
-Method | URI | Parameters | Body | Description | Return |
--------|-----|:----------:|:----:|-----------|:-------:|
-GET | /recipients | ❌ | ❌ | List recipients  | `{ [recipients] }` |
-GET | /recipients/:id | `id:` id referring to the recipient in the database | ❌ | List recipient  | `{ recipient }` |
