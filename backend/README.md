@@ -30,7 +30,7 @@ Used for admin authentication only:
 
 Method | URI | Parameters | Body | Description | Return |
 -------|-----|:----------:|:----:|-----------|:-------:|
-POST | /sessions | ❌ | <code><span style="color:red">email</span></code> e <code><span style="color:red">password</span></code> | Generates a JWT token. | `{ user: { id, name }, token }` |
+POST | /sessions | ❌ | <code><span style="color:red">id</span></code> | Login. | `Id` |
 
 ### Files
 
